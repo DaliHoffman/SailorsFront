@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/css/styles.css"> <link rel="stylesheet" href="/css/boatRamp.css"> <link rel="stylesheet" href="/css/weatherAlert.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/js/locations.js"></script>
+    <script src="/js/utilities.js"></script>
+    <script src="/js/NIWA_Tides.js"></script>
+    <script src="https://kit.fontawesome.com/3428162ee7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    {% include 'navbar.html' %} 
+    {{ content | safe }}  
+    <script src="/js/auto-dark-mode.js"></script> 
+    <script src="/js/defaultUnits.js"></script>
+    <script src="/js/registration.js></script>
+
+</body>
+</html>

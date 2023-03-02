@@ -1,0 +1,98 @@
+---
+layout: layout.njk
+title: Homepage
+---
+
+<h1 class="dashboard">Weather</h1>
+
+<!--created warnings div to append alerts above the weather data-->
+<div class="warnings"></div>
+
+<div class="dashboard_no_wrap">
+    <table class="current_weather">
+        <th class="cweather" colspan="2">Current weather</th> 
+       <tr class="current_temp">
+            <th class="title1">Temperature</th>
+
+        </tr>
+
+        <tr class="current_fl">
+            <th class="title2">Feels like</th>
+
+        </tr>
+
+        <tr class="dirwind">
+            <th class="title8">Wind Direction</th>
+
+        </tr>
+
+        <tr class="speedwind">
+            <th class="title6">Wind Speed</th>
+
+        </tr>
+
+        <tr class="gustwind">
+            <th class="title7">Wind Gust</th>
+
+        </tr>
+    </table>
+
+    <!-- <div id="currentgrid"></div> -->
+
+    <table class="weather_outlook">
+        <!--each row representing the old titles array-->
+        <!--placeholders for weekend data at this stage-->
+        <th class="woutlook" colspan="2">Weather for this weekend</th> 
+        
+        <tr class="dates">
+            <th class="title1">Date</td>
+            <td class="sat_date"></td>
+        </tr>
+        <tr class="conditions">
+            <th class="title2">Conditions</td>
+            <td class="sat_condition"></td>
+
+        </tr>
+        <tr class="precip">
+            <th class="title3">Chance of Rain</td>
+            <td class="sat_pop"></td>
+
+        </tr>
+        <tr class="high_temp">
+            <th class="title4">High</td>
+            <td class="sat_high"></td>
+
+        </tr>
+
+        <tr class="low_temp">
+            <th class="title5">Low</td>
+            <td class="sat_low"></td>
+
+        </tr>
+
+        <tr class="speedwind">
+            <th class="title6">Wind Speed</t>
+            <td class="sat_speed"></td>
+
+        </tr>
+
+        <tr class="gustwind">
+            <th class="title7">Wind Gust</td>
+            <td class="sat_gust"></td>
+
+        </tr>
+
+        <tr class="dirwind">
+            <th class="title8">Wind Direction</td>
+            <td class="sat_dir"></td>
+
+        </tr>
+    </table>
+
+    <!-- <div id="weekendgrid"></div> -->
+</div>
+
+
+<script src="/js/currentweather.js"></script>
+<script src="/js/weatheroutlook.js"></script>
+<link rel="stylesheet" href="/css/weatherAlert.css">

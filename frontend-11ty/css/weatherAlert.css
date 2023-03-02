@@ -1,0 +1,36 @@
+@import './styles.css';
+.lowtemp{
+    background-color: var(--alert-control-color);
+}
+.temp_data{
+    color: var(--alert-control-color);
+}
+.hightempdiv{
+    color: var(--alert-control-color);
+}
+.sat_low td{
+    color: var(--alert-control-color);
+    border: none;
+}
+.sat_date td{
+    border: none;
+}
+.sat_condition td{
+    border: none;
+}
+
+.sat_pop td{
+    border: none;
+}
+.sat_speed td {
+    border: none;
+}
+.sat_gust td {
+    border: none;
+}
+.sat_dir td {
+    border: none;
+}
+.sat_high td {
+    border: none;
+}

@@ -1,0 +1,29 @@
+{
+  "name": "beach-pwa-22-1-purplemonkeys",
+  "version": "1.0.0",
+  "description": "https://taupe-mandazi-4a1d18.netlify.app/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx eleventy",
+    "start": "npx eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BIT-Studio-3/beach-pwa-22-1-purplemonkeys.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BIT-Studio-3/beach-pwa-22-1-purplemonkeysy/issues"
+  },
+  "homepage": "https://github.com/BIT-Studio-3/beach-pwa-22-1-purplemonkeysy#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^8.5.1"
+  }
+}

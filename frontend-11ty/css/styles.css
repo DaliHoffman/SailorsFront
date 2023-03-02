@@ -1,0 +1,793 @@
+/* these are styles for all the pages  */
+
+/* Variable created for styling used in the Radio buttons */
+:root {
+  --main-border: 1px solid black;
+  --form-control-color: #599bb3;
+  --text-color: black;
+  --bkg-color: white;
+  --text-color-dark: white;
+  --bkg-color-dark: black;
+  --alert-color-dark: #599bb3;
+  --alert-control-color: #001aff;
+  
+}
+
+/* Used to make the sizing uniform for any device which is on using the radio buttons */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-size: cover;
+  --text-color: black;
+  --bkg-color: white;
+  color: var(--text-color);
+  background-color: var(--bkg-color);
+}
+
+body.dark-mode {
+  --text-color: var(--text-color-dark);
+  --alert-control-color: var(--alert-color-dark);
+  --bkg-color: var(--bkg-color-dark);
+  color: var(--text-color-dark);
+  background-color: var(--bkg-color-dark);
+}
+
+/*the nav bar itself */
+nav {
+  display: contents;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1.1rem;
+  height: 70px;
+}
+
+/* the website links */
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+/* The titles for all the pages*/
+h1 {
+  color: var(--text-color);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 35px;
+  margin-right: 45px;
+}
+
+/* Weather dashboard title*/
+.dashboard{
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  margin-right: 45px;
+}
+
+/*****************************************
+******************************************
+        DASHBOARD ON HOME PAGE
+******************************************
+*****************************************/
+
+/****************************************************************
+  Current weather and Weekend weather outlook table styles
+*****************************************************************/
+.warnings{
+  display:flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.dashboard_no_wrap{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 555px){
+  .dashboard_no_wrap{
+    flex-wrap: wrap;
+  }
+
+}
+/* headers from top of the table*/
+.cweather, .woutlook{
+  font-family: "Times New Roman", Times, serif;
+
+}
+
+/* The tables themselves */
+.weather_outlook, .current_weather {     
+    border-collapse: collapse;
+    display:flex;
+    flex-direction: column;
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+  td, th{    
+  border: 0.1em solid var(--text-color); 
+  background-color: var(--bkg-color);
+  color: var(--text-color);
+  text-align: center;
+  width: 10em;    
+  }
+
+  tr {    
+    height: 2em;    
+  }
+ 
+  .cweather, .woutlook, .title1, .title2,
+  .title3, .title4, .title5,.title6, .title7, .title8{
+    background-color: darkgrey;
+    color:black; /* changed text to black to make it easier to read in both light/dark mode */
+  }
+
+
+/* Tide Module */
+.tide_module * {
+  padding: 0px;
+  margin: 0px;
+}
+
+.tide_module {
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  margin: 0px 20px;
+  margin-top: 20px;
+}
+
+.tide_module > h1 {
+  color: var(--text-color);
+  padding: 10px 0px 5px 0px;
+}
+
+.tide_module > h1 > span {
+  padding-left: 10px;
+}
+
+.chart_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 30px;
+}
+
+.chart_div {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+
+.chart_div > h2 {
+  padding-bottom: 10px;
+}
+
+.dropbtn:nth-child(1) {
+  position: relative;
+}
+
+.chart_div > img {
+  width: 100%;
+  transition: 0.2s;
+}
+
+.chart_div > img:hover {
+  transform: scale(1.01);
+}
+@media (max-width: 1250px) {
+  .chart_container {
+    flex-direction: column;
+  }
+}
+
+.dropbtn {
+  background: var(--bkg-color);
+  color: var(--text-color);
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  left: 2%;
+  display: inline-block;
+}
+
+.dropdown-content {
+  background-color: var(--bkg-color);
+  display: none;
+  position: absolute;
+  left: -6.5%;
+  min-width: 160px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.show {
+  display: block;
+}
+
+
+/* Used in the radio buttons styling */
+.form-control {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+  margin-bottom: 10px;
+}
+
+/* Styling the radio buttons inserted on the page */
+
+input[type="radio"] {
+  /* background-color: #fff; */
+  margin: 0;
+  font: inherit;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+  accent-color: var(--form-control-color);
+}
+
+.ul {
+  border: 1px solid var(--bkg-color);
+  color: var(--text-color);
+}
+
+a:link,
+a:visited {
+  color: var(--text-color);
+}
+
+/* Styling an Unchecked radio button */
+input[type="radio"]:before {
+  content: "";
+  width: 0.2em;
+  height: 0.2em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--text-color);
+  background-color: var(--bkg-color);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+.form-control + .form-control {
+  margin-top: 0.5em;
+}
+
+.myButton {
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 13px 32px;
+  text-decoration: none;
+}
+
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.dark-mode .chart_div img {
+  filter: invert(1);
+}
+
+@media screen and (max-width: 1168px) {
+  .nav-header {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .nav-header {
+    margin-right: 1.5%;
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  nav,
+  #select {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 641px) {
+  .nav-header {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .nav-header {
+    font-size: 0.9rem;
+  }
+
+  nav,
+  #select {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .nav-header {
+    font-size: 0.8rem;
+  }
+
+  nav,
+  #select {
+    font-size: 0.6rem;
+  }
+}
+
+/************************************
+
+  Settings Menu CSS
+
+*************************************/
+
+/*Parent Div for the menu*/
+.settingsMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.settingsTitle{
+  font-size: 60pt;
+  margin: 0;
+  text-decoration: underline;
+  transition: ease all 1s;
+}
+
+
+
+/*Title in navbar*/
+.settingsTitle {
+  margin: 0;
+  color: var(--text-colour);
+}
+
+
+.settingsOptions{
+  font-size: 20pt;
+  transition: ease all 1s;
+}
+
+/*Apply settings button*/
+.settingsButton {
+  background-color: var(--dark-back-colour);
+  color: var(--dark-font-colour);
+}
+
+/*Apply button in the menu*/
+.settingsButton{
+  border-radius: 10px;
+  margin: 0 0 35px 0; /*Place the apply button far to the bottom of the menu*/
+  padding: 10px 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+/*Used to reset some of the existing styling causing issues*/
+.settingsOptions ul{
+  padding: 0;
+}
+
+.settingsOptions h2{
+  margin-bottom: 0;
+}
+
+.smallSettingsText{
+  font-size: 8pt;
+}
+
+
+
+/************************************
+
+  NavBar Menu CSS
+
+*************************************/
+
+i{
+  font-style: normal;
+}
+
+nav{
+  display: flex;
+  background-color: inherit;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5% 0.5%;
+  font-size: 1.1rem;
+  height: 70px;
+}
+
+.dropbtn{
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown{
+  position: relative;
+  left: 2%;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  overflow: hidden;
+  border: solid 1px;
+  border-radius: 3px;
+  background-color: var(--bkg-color);
+  z-index: 1;
+  
+}
+
+.dropdown-content a{
+  padding: 12px 16px;
+  border: solid 1px;
+  border-radius: 2px;
+  text-decoration: none;
+  display: block;
+}
+
+.show {display: block;}
+
+/*font awesome icons*/
+.fa-house-user, .fa-calendar, .fa-gears, .fa-anchor, .fa-location-crosshairs, .fa-user, .fa-comments {
+  visibility: hidden;
+  font-size: 12px;
+}
+
+
+/* all media query related to nav bar */ 
+@media screen and (max-width: 1600px){
+  nav{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1400px){
+  nav{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  nav{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  nav{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px){
+  nav{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px){
+  nav{
+    position: fixed;
+    width: 97%;
+    bottom: 0;
+    border: solid 1px rgb(255,255,255);
+    border-radius:  2px;
+    z-index: 1;
+  }
+  .nav-header{
+    display: none;
+}
+
+.top-nav{
+  display: block;
+}
+
+#Dropdown{
+    bottom: 100%;
+}
+
+.bottom-nav{
+    display: none;
+}
+
+/*font awesome icons*/
+.fa-house-user, .fa-calendar, .fa-gears, .fa-anchor, .fa-location-crosshairs, .fa-user, .fa-comments {
+    visibility: visible;
+    font-size: 12px;
+}
+
+}
+
+@media screen and (max-width: 445px){
+  nav{
+      position: fixed;
+      width: 97%;
+      border: solid 1px rgb(255,255,255);
+      border-radius:  2px;
+      z-index: 1;
+      margin-bottom: 0% 0% 20% 0%;
+      height: 50px;
+  }
+
+  .top-nav{
+    display: block;
+  }
+
+  .nav-header{
+      display: none;
+  }
+
+  #Dropdown{
+      bottom: 100%;
+  }
+
+  .bottom-nav{
+    display: none;
+  }
+
+
+  /*font awesome icons*/
+  .fa-house-user, .fa-calendar, .fa-gears, .fa-anchor, .fa-location-crosshairs, .fa-user, .fa-comments {
+    visibility: visible;
+    font-size: 12px;
+}
+  
+
+}
+
+
+
+/*Media Queries
+Currently in a rough state as only meant to be
+basic responsiveness unitl we work on final media queries
+to ensure consistent screen sizes.
+
+Affects the width the menu shows only when hovering
+
+
+
+
+/*User Time set AM/PM area of the settings menu*/
+.timeSet{
+  margin: 0 0 20px 0;
+}
+
+/*Message displayed under 'Select Times' heading (defaults)*/
+.warningSettings{
+  color: red;
+  font-size: 10pt;
+  padding:0;
+  margin: 0;
+  transition: ease all 1s;
+}
+
+/*Shrinks all settings text with ease transition*/
+@media screen and (max-width: 340px){
+  .settingsTitle{
+    font-size: 45pt;
+  }
+  
+  .settingsOptions{
+    font-size: 8pt;
+  }
+
+  .warningSettings{
+    font-size: 7pt;
+  }
+}
+
+/*****************************
+
+Calendar CSS
+
+******************************/
+
+/*this will be css related to the calendar only*/
+/* tide calendar */
+
+/*Keep in mind anything I edit that relates to the dark/light mode colours
+I edited them with my home computer having dark mode as default*/
+/* the day and the month headings */
+
+.heading_container{
+  border: 2px solid var(--text-color);
+  border-bottom: 0px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); 
+  justify-items: center;
+  position: relative;
+}
+.month_heading{
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 35px;
+  font-size: 34px;
+  padding-right: 70px;
+}
+
+ .sunday_heading, .monday_heading, .tuesday_heading, .wednesday_heading,
+ .thursday_heading,.friday_heading, .saturday_heading{
+  font-size: 45px;
+}
+
+/*Sorting the days based on grid position*/
+.monday_heading{
+  grid-column-start: 2;
+}
+
+.tuesday_heading{
+  grid-column-start: 3;
+}
+
+.wednesday_heading{
+  grid-column-start: 4;
+}
+
+.thursday_heading{
+  grid-column-start: 5;
+}
+
+.friday_heading{
+  grid-column-start: 6;
+}
+
+.saturday_heading{
+  grid-column-start: 7;
+}
+
+
+/*The whole calendar*/
+.calendar_parent{
+  background:var(--bkg-color);
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding-left: 0;
+  text-align: center; 
+  border: 1px solid var(--text-color);
+  margin: 0;
+}
+
+.calendar_child div{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  color: var(--text-color);
+  background-color: var(--bkg-color);
+}
+
+.day_container{
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  background-color: var(--bkg-color);
+}
+
+/*** heading that's inside the calendar grid ***/
+.h1_dateHeading{
+  font-size: 20px;
+  margin: 0;
+  border-bottom: 1px solid var(--text-color);
+  background-color: #3d3d3d; /* added background colour to diffrentiate the date and the times*/
+  color: white; /* changed colour of dates to make it easier to read*/
+}
+
+/*icons*/
+.fa-solid {
+  font-size: 30px;
+  padding-left: 5px;
+}
+
+/*Text that is the tide times and tide height*/
+.tide_data_time{
+  font-size: 20px;
+  padding-right: 15px;
+  border-bottom: 1px solid var(--text-color);
+}
+
+/**********************************************************************************
+Media queries for tide calendar in order to make it more responsive/mobile-friendly
+***********************************************************************************/
+@media screen and (max-width: 672px){
+ 
+  .h1_dateHeading{
+      font-size: 26px !important;
+  }
+
+  .tide_data_time{
+      font-size: 17px !important;
+      padding-left: 4px !important;
+      padding-right: 4px !important;
+      padding-bottom: 8px !important;
+  }
+
+}
+
+
+/*****************************
+
+Boat Ramp
+
+******************************/
+
+.boat_ramp {
+  display: flex;
+  flex-direction: row;
+  margin-left: 25%;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  align-content: space-around;
+}
+
+.ramp_item {
+  flex-grow: initial;
+  width: calc((85% / 2) - 30px);
+}
+
+.inner_item li {
+  list-style-type: disc;
+}
+
+.boatSubtext{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/********************************
+
+Admin Page
+
+*********************************/
+
+table.admin {
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,69 @@
+/* imprting style.css so i can re use the root colors */
+@import './styles.css';
+
+
+.loader {
+    border: 16px solid var(--text-color);
+    border-radius: 50%;
+    border-top: 16px solid var(--form-control-color);;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin-left: 45%;
+
+  }
+  /*used for  browsers that do not support animation and transform properties  */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .rampH{
+    text-align: center;
+  }
+  .loadAlert{
+    text-align: center;
+  }
+
+  @media screen and (max-width: 415px) {
+    .boat_ramp{
+        margin-left: 12%;
+    }
+    .ramp_item{
+        width: 130px;
+    }
+    .loader{
+        align-content: center;
+        margin-left: 35%;
+    }
+
+    .rampH{
+        margin-left: 15%;
+      }
+      .loadAlert{
+        text-align: center;
+        margin-left: 10%;
+      }
+  }
+
+  /* settings */
+  .locationSet {
+    background: var(--bkg-color);
+    color: var(--text-color);
+    padding: 0;
+    font-size: 1.0em;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+  }
+/* fix Map on boat ramp color is now correctly showing */
+  .ffff:link,
+  .fff:visited
+  {
+    color: var(--alert-control-color);
+  }

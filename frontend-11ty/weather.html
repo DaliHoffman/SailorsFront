@@ -1,0 +1,46 @@
+<div id="grid4"></div>
+
+<h2 style= "text-align: left;">Temperature</h2>
+
+<form action="">
+  <label class="form-control" onclick="setCurrentUnit('currentTempUnit', 'celsius')">
+    <input type="radio" name="radio" id="celsius" checked />
+    Celsius
+  </label>
+  <label class="form-control" onclick="setCurrentUnit('currentTempUnit', 'fahrenheit')" >
+    <input type="radio" name="radio" id="fahrenheit" />
+    Fahrenheit     
+  </label>
+</form>
+
+<h2 style= "text-align: left;">Wind</h2>
+
+<form action="">
+  <label class="form-control" onclick="setCurrentUnit('currentWindUnit', 'kmph')" >
+    <input type="radio" name="radio" id="kmph" checked />
+    Kilometers Per Hour
+  </label>
+  <label class="form-control" onclick="setCurrentUnit('currentWindUnit', 'mps')" >
+    <input type="radio" name="radio" id="mps"  />
+    Meters Per Second
+  </label>
+  <label class="form-control" onclick="setCurrentUnit('currentWindUnit', 'knot')" >
+    <input type="radio" name="radio" id="knot"  />
+    Knots
+  </label>
+</form>
+
+<!-- Set the currently selected units to be checked -->
+<script>
+document.querySelectorAll("input").forEach(r =>
+{
+  if (r.id === currentTempUnit)
+  {
+    r.checked = true;
+  }
+  else if (r.id === currentWindUnit)
+  {
+    r.checked = true;
+  }
+});
+</script>

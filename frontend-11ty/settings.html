@@ -1,0 +1,115 @@
+---
+layout: layout.njk 
+title: Settings
+---
+<!--Settings Menu-->
+<div class="settingsMenu">
+    <h2 class="settingsTitle">{{ title }}</h2> 
+    <div class="settingsOptions">
+
+            <!--Feature temporary disabled-->
+    <!--<div class="top-nav"><a href="/registration"><i class="bottom-nav">Login/Register</i><i class="fa-solid fa-user"></i></a></div>-->
+
+        
+        <!--Temperature Unit selection-->
+        <ul>
+            <h2>Temperature</h2>
+            <p class="smallSettingsText currentTempDisplay">Currently Applied Temp Unit: celsius</p>
+            <form action="">
+                <label class="form-control" onclick="setApplyUnit('currentTempUnit', 'celsius')">
+                    <input type="radio" name="radio" id="celsius" checked />Celsius
+                </label>
+                <label class="form-control" onclick="setApplyUnit('currentTempUnit', 'fahrenheit')" >
+                    <input type="radio" name="radio" id="fahrenheit" />Fahrenheit     
+                </label>
+            </form>
+        </ul>
+
+        <!--Wind Unit selection-->
+        <ul>
+            <h2>Wind</h2>
+            <p class="smallSettingsText currentWindDisplay">Currently Applied Temp Unit: mps</p>
+            <form action="">
+                <label class="form-control" onclick="setApplyUnit('currentWindUnit', 'kmph')">
+                    <input type="radio" name="radio" id="kmph" checked />Kilometers Per Hour
+                </label>
+                <label class="form-control" onclick="setApplyUnit('currentWindUnit', 'mps')" >
+                    <input type="radio" name="radio" id="mps"  />Meters Per Second
+            </label>
+            <label class="form-control" onclick="setApplyUnit('currentWindUnit', 'knot')" >
+                <input type="radio" name="radio" id="knot"  />Knots
+            </label>
+            </form>
+        </ul>
+        <div class="dropdown">
+            <button onclick="dropFunction()" id="select" class="locationSet"><i class="locationSet ">Locations</i><i class="fa-solid fa-location-crosshairs"></i></button>
+            <p class="smallSettingsText currentWindDisplay">Locations is a dropdown.</p>
+            <div id="Dropdown" class="dropdown-content"></div>
+        </div>
+
+        <!--User can select an AM/PM time to filter data on the site-->
+        <div class="timeSet">
+            <h2>Select Times</h2>
+            <!--Multiple <p> tags as existing styles didnt want to combine-->
+            <p class="warningSettings">Tide Times will reset to default value if apply </p>
+            <p class="warningSettings">is clicked without changing dropbox to desired times</p>
+            <p class="warningSettings">Defaults: Min = 12am , Max = 12am , Range = 24 hours</p>
+            <div class="dropdownTime">
+                <select class="timeAM">
+                    <option value = "0">MIN AM Time :</option>
+                    <option value = "1">12:00am NZT</option>
+                    <option value = "2">01:00am NZT</option>
+                    <option value = "3">02:00am NZT</option>
+                    <option value = "4">03:00am NZT</option>
+                    <option value = "5">04:00am NZT</option>
+                    <option value = "6">05:00am NZT</option>
+                    <option value = "7">06:00am NZT</option>
+                    <option value = "8">07:00am NZT</option>
+                    <option value = "9">08:00am NZT</option>
+                    <option value = "10">09:00am NZT</option>
+                    <option value = "11">10:00am NZT</option>
+                    <option value = "12">11:00am NZT</option>
+                </select>
+            </div>
+
+            <div class="dropdownTime">
+                <select class="timePM">
+                    <option value = "0">MAX PM Time:</option>
+                    <option value = "1">12:00pm NZT</option>
+                    <option value = "2">01:00pm NZT</option>
+                    <option value = "3">02:00pm NZT</option>
+                    <option value = "4">03:00pm NZT</option>
+                    <option value = "5">04:00pm NZT</option>
+                    <option value = "6">05:00pm NZT</option>
+                    <option value = "7">06:00pm NZT</option>
+                    <option value = "8">07:00pm NZT</option>
+                    <option value = "9">08:00pm NZT</option>
+                    <option value = "10">09:00pm NZT</option>
+                    <option value = "11">10:00pm NZT</option>
+                    <option value = "12">11:00pm NZT</option>
+                </select>
+            </div>
+        </div>
+
+        <!--Apply button - Only applies changes to settings when clicked-->
+        <div> 
+            <button class="settingsButton applyButton">Apply Changes</button>
+        </div>
+
+        <!--Dark Mode button-->
+        <div class="settingsDarkMode">
+            <button class="btn-toggle settingsButton">Toggle Dark-Mode</button>
+        </div>
+
+
+        
+    </div>
+</div>
+
+
+<!--Included to ensure page loads as expected-->
+<script src="/js/weatheroutlook.js"></script>
+<script src="/js/utilities.js"></script>
+<script src="/js/settings.js"></script>
+<script src="/js/locations.js"></script>
+<script src="/js/dropdown.js"></script>
